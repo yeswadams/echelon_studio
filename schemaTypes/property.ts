@@ -239,6 +239,7 @@ export const agent = defineType({
         { name: 'twitter', title: 'Twitter URL', type: 'url' },
         { name: 'linkedin', title: 'LinkedIn URL', type: 'url' },
         { name: 'instagram', title: 'Instagram URL', type: 'url' },
+        { name: 'facebook', title: 'Facebook URL', type: 'url' },
       ],
     }),
   ],
