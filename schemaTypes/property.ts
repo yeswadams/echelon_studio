@@ -49,12 +49,6 @@ export const property = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'isPremierListing',
-      title: 'Premier Listing',
-      type: 'boolean',
-      initialValue: false,
-    }),
-    defineField({
       name: 'propertyType',
       title: 'Property Type',
       type: 'string',
@@ -115,8 +109,30 @@ export const property = defineType({
               initialValue: false 
             }),
             defineField({ name: 'floorArea', title: 'Floor Area (SqFt)', type: 'number' }),
+            defineField({ name: 'sizeSqm', title: 'Approx. Size (m²)', type: 'number' }),
+            defineField({ name: 'serviceCharge', title: 'Service Charge (KES/mo)', type: 'number' }),
+            defineField({ name: 'estimatedRent', title: 'Estimated Rent (Range)', type: 'string', placeholder: 'e.g. KSh 60,000 - 85,000' }),
+            defineField({
+              name: 'pricesPerFloor',
+              title: 'Prices Per Floor Range',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    { name: 'floorRange', title: 'Floor Range', type: 'string', placeholder: 'e.g. 1st - 7th' },
+                    { name: 'price', title: 'Price (KES)', type: 'number' },
+                  ]
+                }
+              ]
+            }),
             defineField({ name: 'planImage', title: 'Floor Plan Image', type: 'image', options: { hotspot: true } }),
-            defineField({ name: 'unitDescription', title: 'Unit Description', type: 'text' }),
+            defineField({ 
+              name: 'unitDescription', 
+              title: 'Unit Features/Description List', 
+              type: 'array', 
+              of: [{ type: 'string' }] 
+            }),
           ],
           preview: {
             select: {
