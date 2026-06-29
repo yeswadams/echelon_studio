@@ -6,8 +6,27 @@ import {feature} from './feature'
 import {location} from './location'
 import {nearbyPlace} from './nearbyPlace'
 import {postType} from './postType'
-import {property} from '././property'
+import {property} from './property'
 import {propertyUnit} from './propertyUnit'
 import {tag} from './tag'
 
-export const schemaTypes = [postType, property, agent, amenity, developer, faq, feature, location, nearbyPlace, propertyUnit, tag]
+export const schemaTypes = [
+  // Core listing documents
+  property,
+  propertyUnit,
+
+  // People & organisations
+  agent,
+  developer,
+
+  // Taxonomy & lookup documents
+  amenity,
+  feature,
+  location,
+  nearbyPlace,
+  tag,
+
+  // Content documents
+  faq,
+  postType,
+]

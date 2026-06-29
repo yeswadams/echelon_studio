@@ -4,8 +4,8 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
-  name: 'default',
-  title: 'next16_website',
+  name: 'echelon-studio',
+  title: 'Echelon Studio',
 
   projectId: 'xfkwtbtp',
   dataset: 'production',
